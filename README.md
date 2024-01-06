@@ -9,3 +9,5 @@ Para correr las diapositivas tal como están, es necesario tener instalado al me
 Algunas fuentes: 
 
 [xaringan](https://github.com/yihui/xaringan)
+[xaringanExtra](https://github.com/gadenbuie/xaringanExtra)
+[fontAwesome](https://github.com/FortAwesome/Font-Awesome)
