@@ -88,7 +88,7 @@ library(xaringanthemer)
 # pagedown::chrome_print("prueba_pres.html", output="Prueba_pres.pdf")
 
 # Usando paquete renderthis)
-# renderthis::to_pdf("prueba_pres.html")
+ renderthis::to_pdf("prueba_pres.html")
 ```
 ---
 .can-edit[
