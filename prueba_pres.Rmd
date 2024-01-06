@@ -1,0 +1,135 @@
+---
+title: "Titulo de la presentación"   
+subtitle: 
+date: "`r paste('', format(Sys.Date(), '%d-%B- %Y'))`"
+author: "____________________________"
+institute: |
+  ![](img/janekeo.png)
+output: 
+  xaringan::moon_reader:
+   includes: 
+   after_body: timer.html
+   css: CSS/xaringan-themer.css
+   nature:    
+      highlightStyle: github    
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+      slideNumberFormat: "%current%"
+---
+
+# Titulo 1
+ 
+- Texto 1
+
+--
+
+- Texto 2
+
+--
+
+- Texto 3
+
+```{r xaringan-extra-styles, xaringanExtra, xaringan-editable, echo=FALSE}
+
+# En este chunk se configuran 3 funciones del paquete xaringanExtra
+
+# Definir estilos para los trozos de código
+xaringanExtra::use_extra_styles(
+  hover_code_line = TRUE,         #<<
+  mute_unhighlighted_code = TRUE  #<<
+)
+
+#Generar la barra de progreso
+xaringanExtra::use_progress_bar(color = "#F1C40F", 
+                                location = "bottom")
+
+```
+
+
+```{r xaringan-editable, echo=FALSE}
+# Con esta función se habilita la llamada a presentaciones editables en vivo 
+# sin salir de la lámina mientras se presenta en el navegador 
+xaringanExtra::use_editable(expires = 1)
+```
+
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+
+# Con estas funciones se configura un boton de "pegar" en el codigo que se inserte en una lámina. 
+
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i>",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #90BE6D\"></i>",
+    error_text = "<i class=\"fa fa-times-circle\" style=\"color: #F94144\"></i>"
+  ),
+  rmarkdown::html_dependency_font_awesome() 
+)
+```
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE, OutDec = ",")
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+
+library(xaringanExtra)
+library(knitr)
+library(kableExtra)
+library(xaringanthemer)
+
+## Imprimir como PDF
+
+# Usando paquete pagedown)
+# pagedown::chrome_print("prueba_pres.html", output="Prueba_pres.pdf")
+
+# Usando paquete renderthis)
+# renderthis::to_pdf("prueba_pres.html")
+```
+---
+.can-edit[
+# Hola Mundo 
+### (El titulo se puede editar a presentar desde el navegador)
+]
+
+.pull-left[Es posible utilizar marcadores de CSS, para definir los estilos de las diapositivas, por ejemplo `.pull-left[]` permite que el texto que se escriba dentro del corchete quede a la izquierda. Tambiéns es posible editar los estilos del texto y usar **letras gruesas** o *cursivas* dentro de los corchetes. Los atributos como *colores*, *tamaño*, y otros sobre el texto en general se pueden definir en el mismo archivo CSS.]
+
+--
+
+.pull-right[`.pull-right[]` permite que el texto que se escriba dentro del corchete quede a la derecha. Es posible aumentar o reducir los márgenes mediante cambios en el archivo *xaringan-themer.css* buscando las funciones que tengan dichos nombres o creando nuevas y luego llamarlas desde el archivo '.Rmd']
+
+---
+# Uso de código
+
+Codigo en diapositiva
+
+```{r, echo=TRUE}
+mtcars |> head(5) # Observar las 5 primeras filas
+
+summary(mtcars[,1:3]) # Revisar las 3 primeras columnas
+
+```
+
+
+---
+# Gráfico
+
+.pull-left[
+```{r, echo=TRUE, fig.height=4}
+mtcars |> 
+  ggplot2::ggplot(
+  ggplot2::aes(x = wt,
+               y = mpg))+
+  ggplot2::geom_line()
+
+
+```
+]
+
+.pull-right[
+El código, se puede alinear a la izquierda, derecha o según los márgenes que se deseen. En este caso, el chunk en el que se crea el gráfico utiliza **ggplot2** para el calculo del gráfico, pero también se puede insertar una imagen de un gráfico ya creado. Las dimensiones del gráfico pueden definirse en el chunk.
+]
