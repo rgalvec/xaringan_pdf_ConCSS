@@ -8,4 +8,4 @@ Para correr las diapositivas tal como están, es necesario tener instalado al me
 
 Algunas fuentes: 
 
-xaringan ![](https://github.com/yihui/xaringan)
+ ![xaringan](https://github.com/yihui/xaringan)
