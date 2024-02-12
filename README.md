@@ -1,10 +1,10 @@
-# Xaringan y Xaringan Extra
+# Xaringan y Xaringan Extra - R
 
-**Para imprimir la diapositiva a pdf** se puede utilizar 
+**Para imprimir la diapositiva a pdf** se puede utilizar en R:
 ```{r}
 renderthis::to_pdf("ruta_del_archivo.html")
 ```
-Para correr las diapositivas tal como están, es necesario tener instalado al menos `tinytext`, `xaringan`, `xaringanExtra`, `fontAwesome` y `renderthis`
+Para compilar las diapositivas tal como están, es necesario tener instalado en R al menos `tinytext`, `xaringan`, `xaringanExtra`, `fontAwesome` y `renderthis`
 
 Algunas fuentes: 
 
